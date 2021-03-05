@@ -4,9 +4,39 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Verum.WPF"
+        xmlns:controls="clr-namespace:Verum.WPF.Controls"
+        xmlns:behaviors="clr-namespace:Verum.WPF.Behaviors"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
+        AllowsTransparency="True"
+        WindowStyle="None"
         Title="MainWindow" Height="450" Width="800">
+
+    <i:Interaction.Behaviors>
+        <behaviors:MovingWindow/>
+    </i:Interaction.Behaviors>
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.ColumnSpan="2">
+            <controls:TopNavigationBar/>
+        </Grid>
+
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              Background="{StaticResource BrushPrimary2}">
+            <controls:SideNavigationBar/>
+            
+        </Grid>
 
     </Grid>
 </Window>

@@ -1,8 +1,31 @@
 ﻿<Application x:Class="Verum.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Verum.WPF">
+             xmlns:local="clr-namespace:Verum.WPF"
+             xmlns:viewModels="clr-namespace:Verum.WPF.ViewModel"
+             xmlns:views="clr-namespace:Verum.WPF.View">
     <Application.Resources>
-         
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/Common.xaml"/>
+                <ResourceDictionary Source="/Styles/RadioButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/NavigationButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModels:CustomersViewModel}">
+                <views:CustomersView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:SentLettersViewModel}">
+                <views:SentLettersView/>
+            </DataTemplate> 
+
+            <DataTemplate DataType="{x:Type viewModels:ReceivedLettersViewModel}">
+                <views:ReceivedLettersView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+        
     </Application.Resources>
 </Application>
