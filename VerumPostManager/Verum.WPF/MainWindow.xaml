@@ -10,33 +10,61 @@
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStyle="None"
+        Background="Transparent"
         Title="MainWindow" Height="450" Width="800">
 
     <i:Interaction.Behaviors>
-        <behaviors:MovingWindow/>
+        <behaviors:MovingWindowBehavior/>
     </i:Interaction.Behaviors>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0"
+                      ResizeBorderThickness="8"
+                      CornerRadius="10">            
+        </WindowChrome>
+    </WindowChrome.WindowChrome>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
 
-        <Grid Grid.ColumnSpan="2">
-            <controls:TopNavigationBar/>
+
+
+
+    <Border BorderBrush="Gray"
+            BorderThickness="2"
+            CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.ColumnSpan="2"
+                  Grid.Row="0">
+                <controls:TopEdge>
+                    <i:Interaction.Behaviors>
+                        <behaviors:TopEdgeDoubleClickBehavior/>
+                    </i:Interaction.Behaviors>
+                </controls:TopEdge>
+            </Grid>
+
+            <Grid Grid.ColumnSpan="2"
+                  Grid.Row="1">
+                <controls:TopNavigationBar/>
+            </Grid>
+
+            <Grid Grid.Row="2"
+                  Grid.Column="0">
+                <Border CornerRadius="0 0 0 9"
+                    Background="{StaticResource BrushPrimary2}">
+                </Border>
+                <controls:SideNavigationBar/>
+            </Grid>
         </Grid>
+    </Border>
 
-        <Grid Grid.Row="1"
-              Grid.Column="0"
-              Background="{StaticResource BrushPrimary2}">
-            <controls:SideNavigationBar/>
-            
-        </Grid>
-
-    </Grid>
 </Window>

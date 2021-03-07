@@ -10,6 +10,9 @@
     <Compile Update="Controls\SideNavigationBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\TopEdge.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\TopNavigationBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Controls\SideNavigationBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\TopEdge.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\TopNavigationBar.xaml">

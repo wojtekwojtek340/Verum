@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Verum.WPF.Behaviors
 {
-    public class MovingWindow : Behavior<Window>
+    public class MovingWindowBehavior : Behavior<Window>
     {
         protected override void OnAttached()
         {

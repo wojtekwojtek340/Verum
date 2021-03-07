@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace Verum.WPF.Controls
 {
     /// <summary>
-    /// Interaction logic for TopNavigationBar.xaml
+    /// Interaction logic for TopEdge.xaml
     /// </summary>
-    public partial class TopNavigationBar : UserControl
+    public partial class TopEdge : UserControl
     {
-        public TopNavigationBar()
+        public TopEdge()
         {
             InitializeComponent();
         }
-
     }
 }

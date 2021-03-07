@@ -24,4 +24,8 @@
     <ProjectReference Include="..\Verum.DataAccess\Verum.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Command\" />
+  </ItemGroup>
+
 </Project>
