@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -6,8 +7,9 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Verum.DataAccess;
 using Verum.DataAccess.CQRS;
-using Verum.WPF.State.Navigators;
+using Verum.DataAccess.CQRS.Queries.Employees;
 using Verum.WPF.ViewModel;
 
 namespace Verum.WPF
@@ -17,53 +19,38 @@ namespace Verum.WPF
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
+        private readonly IServiceProvider serviceProvider;
+        public App()
         {
-            IServiceProvider serviceProvider = CreateServiceProvider();
+            IServiceCollection services = new ServiceCollection();
 
+            //ViewModels added
+            services.AddSingleton<MainViewModel>();
+            services.AddSingleton<CustomersViewModel>();
+            services.AddSingleton<SentLettersViewModel>();
+            services.AddSingleton<ReceivedLettersViewModel>();
+            services.AddSingleton<LoginViewModel>();
+
+            //EF and CQRS added
+            services.AddTransient<IQueryExecutor, QueryExecutor>();
+            services.AddTransient<ICommandExecutor, CommandExecutor>();
+            services.AddDbContext<VerumContext>(opt => opt.UseSqlServer("Server=DESKTOP-TH6F0L5;Initial Catalog=VerumDb;User ID=Verum;password=Verum;Integrated Security=True;Trusted_Connection=True;"));
+
+            //Start window
+            services.AddSingleton<MainWindow>(s => new MainWindow()
+            {
+                DataContext = s.GetRequiredService<MainViewModel>()
+            });
+
+            serviceProvider = services.BuildServiceProvider();
+        }
+
+        protected override async void OnStartup(StartupEventArgs e)
+        {
             Window window = serviceProvider.GetRequiredService<MainWindow>();
             window.Show();
 
             base.OnStartup(e);
-        }
-
-        private IServiceProvider CreateServiceProvider()
-        {
-            IServiceCollection services = new ServiceCollection();
-
-            //ViewModelDelegateRenavigator.cs
-            services.AddSingleton<INavigator, Navigator>();
-            services.AddSingleton<ViewModelDelegateRenavigator<CustomersViewModel>>();
-
-            //CQRS added
-            services.AddTransient<IQueryExecutor, QueryExecutor>();
-            services.AddTransient<ICommandExecutor, CommandExecutor>();
-
-            //ViewModels added
-            services.AddSingleton<CustomersViewModel>();
-            services.AddSingleton<SentLettersViewModel>();
-            services.AddSingleton<ReceivedLettersViewModel>();
-
-            //VerumViewModelFactory.cs
-            services.AddSingleton<CreateViewModel<CustomersViewModel>>(services =>
-            {
-                return () => services.GetRequiredService<CustomersViewModel>();
-            });
-
-            services.AddSingleton<CreateViewModel<SentLettersViewModel>>(services =>
-            {
-                return () => services.GetRequiredService<SentLettersViewModel>();
-            });
-
-            services.AddSingleton<CreateViewModel<ReceivedLettersViewModel>>(services =>
-            {
-                return () => services.GetRequiredService<ReceivedLettersViewModel>();
-            });
-
-            //Main window added
-            services.AddScoped<MainWindow>(s => new MainWindow());
-
-            return services.BuildServiceProvider();
         }
     }
 }

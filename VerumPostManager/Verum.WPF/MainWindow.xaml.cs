@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Verum.WPF.ViewModel;
 
 namespace Verum.WPF
 {
@@ -22,7 +23,7 @@ namespace Verum.WPF
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
     }
 }

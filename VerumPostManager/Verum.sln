@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Verum.WPF", "Verum.WPF\Verum.WPF.csproj", "{50793B87-5BD5-4B07-94EC-6408C8DEBF35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verum.DataAccess", "Verum.DataAccess\Verum.DataAccess.csproj", "{C486D586-2E7D-4307-BE26-D52D0E53122F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Verum.DataAccess", "Verum.DataAccess\Verum.DataAccess.csproj", "{C486D586-2E7D-4307-BE26-D52D0E53122F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verum.ApplicationServices", "Verum.ApplicationServices\Verum.ApplicationServices.csproj", "{21210E8E-18CD-4D2D-9B84-9FAFFA30692A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C486D586-2E7D-4307-BE26-D52D0E53122F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C486D586-2E7D-4307-BE26-D52D0E53122F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C486D586-2E7D-4307-BE26-D52D0E53122F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21210E8E-18CD-4D2D-9B84-9FAFFA30692A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21210E8E-18CD-4D2D-9B84-9FAFFA30692A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21210E8E-18CD-4D2D-9B84-9FAFFA30692A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21210E8E-18CD-4D2D-9B84-9FAFFA30692A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

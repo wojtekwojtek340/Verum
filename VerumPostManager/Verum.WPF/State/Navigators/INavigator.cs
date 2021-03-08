@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Verum.WPF.ViewModel;
 
 namespace Verum.WPF.State.Navigators
@@ -10,11 +11,12 @@ namespace Verum.WPF.State.Navigators
     public enum ViewType
     {
         Customers,
-        SentLetters,
-        ReceivedLetters        
+        Sent,
+        Received
     }
     public interface INavigator
     {
-        ViewModelBase CurrentViewModel { get; set; }
+        BaseViewModel CurrentViewModel { get; set; }
+        ICommand UpdateViewModelCommand { get; }
     }
 }

@@ -18,7 +18,7 @@ namespace Verum.DataAccess.CQRS
 
         public Task<TResult> Execute<TResult>(QueryBase<TResult> querry)
         {
-            throw new NotImplementedException();
+            return querry.Execute(context);
         }
     }
 }

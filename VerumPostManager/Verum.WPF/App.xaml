@@ -11,8 +11,9 @@
                 <ResourceDictionary Source="/Styles/Common.xaml"/>
                 <ResourceDictionary Source="/Styles/RadioButtonStyle.xaml"/>
                 <ResourceDictionary Source="/Styles/NavigationButtonStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/DataGridStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
+            
             <DataTemplate DataType="{x:Type viewModels:CustomersViewModel}">
                 <views:CustomersView/>
             </DataTemplate>

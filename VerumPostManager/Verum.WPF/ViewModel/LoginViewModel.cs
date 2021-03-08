@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Verum.WPF.ViewModel
 {
-    public class LoginViewModel : ViewModelBase
+    public class LoginViewModel : BaseViewModel
     {
     }
 }

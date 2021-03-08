@@ -16,16 +16,16 @@
     <Compile Update="Controls\TopNavigationBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\CustomersView.xaml.cs">
+    <Compile Update="Views\CustomersView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\LoginView.xaml.cs">
+    <Compile Update="Views\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ReceivedLettersView.xaml.cs">
+    <Compile Update="Views\ReceivedLettersView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\SentLettersView.xaml.cs">
+    <Compile Update="Views\SentLettersView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -45,22 +45,25 @@
     <Page Update="Styles\Common.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\DataGridStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\NavigationButtonStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\RadioButtonStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\CustomersView.xaml">
+    <Page Update="Views\CustomersView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\LoginView.xaml">
+    <Page Update="Views\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ReceivedLettersView.xaml">
+    <Page Update="Views\ReceivedLettersView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\SentLettersView.xaml">
+    <Page Update="Views\SentLettersView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

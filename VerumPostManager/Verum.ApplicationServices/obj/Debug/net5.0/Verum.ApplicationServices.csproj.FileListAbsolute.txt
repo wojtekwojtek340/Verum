@@ -1,0 +1,12 @@
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\bin\Debug\net5.0\Verum.ApplicationServices.deps.json
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\bin\Debug\net5.0\Verum.ApplicationServices.dll
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\bin\Debug\net5.0\ref\Verum.ApplicationServices.dll
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\bin\Debug\net5.0\Verum.ApplicationServices.pdb
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\obj\Debug\net5.0\Verum.ApplicationServices.csprojAssemblyReference.cache
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\obj\Debug\net5.0\Verum.ApplicationServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\obj\Debug\net5.0\Verum.ApplicationServices.AssemblyInfoInputs.cache
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\obj\Debug\net5.0\Verum.ApplicationServices.AssemblyInfo.cs
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\obj\Debug\net5.0\Verum.ApplicationServices.csproj.CoreCompileInputs.cache
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\obj\Debug\net5.0\Verum.ApplicationServices.dll
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\obj\Debug\net5.0\ref\Verum.ApplicationServices.dll
+C:\Users\wojte\OneDrive\Pulpit\Verum\VerumPostManager\Verum.ApplicationServices\obj\Debug\net5.0\Verum.ApplicationServices.pdb

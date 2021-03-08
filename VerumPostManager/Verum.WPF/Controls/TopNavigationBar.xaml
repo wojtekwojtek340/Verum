@@ -32,24 +32,33 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="Dodaj"
-                    Grid.Column="0"/>
+                    Grid.Column="0"
+                    BorderThickness="0 1 1 1"/>
             <Button Content="Edytuj"
                     Grid.Column="1"
                     BorderThickness="0 1 1 1"/>
             <Button Content="Usuń"
                     Grid.Column="2"
                     BorderThickness="0 1 1 1"/>
-            <StackPanel Grid.Column="3"
-                        Orientation="Vertical"
-                        VerticalAlignment="Center">
-                <DatePicker Margin="2"/>
-                <DatePicker Margin="2"/>
-            </StackPanel>
+
+            <Border Grid.Column="3"
+                    BorderBrush="Gray"
+                    BorderThickness="0 1 0 1">
+                <StackPanel Orientation="Vertical"
+                            VerticalAlignment="Center">
+                    <DatePicker Margin="3"/>
+                    <DatePicker Margin="3"/>
+                </StackPanel>
+            </Border>
+
             <Button Content="Szukaj"
                     Grid.Column="4"/>
             <Button Content="Drukuj"
                     Grid.Column="5"
                     BorderThickness="0 1 1 1"/>
+            <Border BorderBrush="Gray"
+                    BorderThickness="0 1 0 1"
+                    Grid.Column="6"/>
         </Grid>
 
     </Grid>

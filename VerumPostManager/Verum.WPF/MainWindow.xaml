@@ -10,8 +10,8 @@
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStyle="None"
-        Background="Transparent"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Background="Transparent">
 
     <i:Interaction.Behaviors>
         <behaviors:MovingWindowBehavior/>
@@ -20,18 +20,14 @@
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="0"
                       ResizeBorderThickness="8"
-                      CornerRadius="10">            
+                      CornerRadius="10">
         </WindowChrome>
     </WindowChrome.WindowChrome>
 
-
-
-
-
     <Border BorderBrush="Gray"
             BorderThickness="2"
-            CornerRadius="10">
-        <Grid>
+            CornerRadius="10 10 0 10">
+        <Grid RenderOptions.EdgeMode="Aliased">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -60,10 +56,18 @@
             <Grid Grid.Row="2"
                   Grid.Column="0">
                 <Border CornerRadius="0 0 0 9"
-                    Background="{StaticResource BrushPrimary2}">
+                        Background="{StaticResource BrushPrimary2}"
+                        BorderBrush="Gray"
+                        BorderThickness="0 1 1 0">
                 </Border>
-                <controls:SideNavigationBar/>
+                <controls:SideNavigationBar DataContext="{Binding Navigator}"/>
             </Grid>
+
+
+            <ContentControl Content="{Binding Navigator.CurrentViewModel}"
+                            Grid.Row="2"
+                            Grid.Column="1"/>
+
         </Grid>
     </Border>
 

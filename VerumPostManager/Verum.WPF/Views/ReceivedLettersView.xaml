@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Verum.WPF.View.CustomersView"
+﻿<UserControl x:Class="Verum.WPF.View.ReceivedLettersView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
 
-        <TextBlock Text="Customer"></TextBlock>
-            
+        <DataGrid ItemsSource="{Binding CustomerList}"/>
+
     </Grid>
 </UserControl>
