@@ -13,7 +13,8 @@
             <Style TargetType="DataGrid" BasedOn="{StaticResource DataGridStyle}"/>
         </Grid.Resources>-->
 
-        <DataGrid ItemsSource="{Binding CustomerList}"/>
+        <DataGrid ItemsSource="{Binding CustomerList}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}"/>
 
     </Grid>
 </UserControl>

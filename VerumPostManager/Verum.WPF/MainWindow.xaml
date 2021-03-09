@@ -50,7 +50,7 @@
 
             <Grid Grid.ColumnSpan="2"
                   Grid.Row="1">
-                <controls:TopNavigationBar/>
+                <controls:TopNavigationBar DataContext="{Binding Navigator.CurrentViewModel}"/>
             </Grid>
 
             <Grid Grid.Row="2"

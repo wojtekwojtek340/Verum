@@ -29,5 +29,6 @@ namespace Verum.WPF.State.Navigators
 
         public ICommand UpdateViewModelCommand => new UpdateViewModelCommand(this);
 
+        
     }
 }
