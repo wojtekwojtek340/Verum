@@ -15,6 +15,7 @@
 
         <DataGrid ItemsSource="{Binding CustomerList}"
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"/>
+        <Popup DataContext="AddViewModel"></Popup>
 
     </Grid>
 </UserControl>

@@ -8,19 +8,23 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\wojte\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
       "projectName": "Verum.ApplicationServices",
-      "projectPath": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
-      "packagesPath": "C:\\Users\\wojte\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\obj\\",
+      "projectPath": "C:\\Users\\Dell\\Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\wojte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

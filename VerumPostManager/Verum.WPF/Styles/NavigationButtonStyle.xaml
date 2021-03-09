@@ -25,6 +25,9 @@
                         <Trigger Property="IsMouseCaptured" Value="True">
                             <Setter Property="Background" Value="{StaticResource BrushPrimary3}" TargetName="button"/>
                         </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{StaticResource BrushPrimary2Trans}" TargetName="button"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -66,11 +69,10 @@
                             x:Name="button"
                             Padding="{TemplateBinding Padding}">                        
                     </Border>
-
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseCaptured" Value="True">
                             <Setter Property="Background" Value="{StaticResource BrushPrimary3}" TargetName="button"/>
-                        </Trigger>
+                        </Trigger>                        
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

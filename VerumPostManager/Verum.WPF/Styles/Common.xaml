@@ -10,6 +10,8 @@
     <SolidColorBrush x:Key="BrushPrimary1" Color="{StaticResource ColorPrimary1}"/>
     <SolidColorBrush x:Key="BrushPrimary2" Color="{StaticResource ColorPrimary2}"/>
     <SolidColorBrush x:Key="BrushPrimary3" Color="{StaticResource ColorPrimary3}"/>
+    <SolidColorBrush x:Key ="BrushPrimary2Trans" Color="LightGray" Opacity="0.13"/>
+    
     
     
     

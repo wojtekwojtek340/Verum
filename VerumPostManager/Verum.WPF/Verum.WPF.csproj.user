@@ -16,6 +16,9 @@
     <Compile Update="Controls\TopNavigationBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\AddRowView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\CustomersView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\RadioButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddRowView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\CustomersView.xaml">
