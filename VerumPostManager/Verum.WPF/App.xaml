@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Verum.WPF"
              xmlns:viewModels="clr-namespace:Verum.WPF.ViewModel"
-             xmlns:views="clr-namespace:Verum.WPF.View">
+             xmlns:views="clr-namespace:Verum.WPF.Views">
     <Application.Resources>
         
         <ResourceDictionary>
@@ -11,7 +11,7 @@
                 <ResourceDictionary Source="/Styles/Common.xaml"/>
                 <ResourceDictionary Source="/Styles/RadioButtonStyle.xaml"/>
                 <ResourceDictionary Source="/Styles/NavigationButtonStyle.xaml"/>
-                <ResourceDictionary Source="/Styles/DataGridStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/NavigationGridStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModels:CustomersViewModel}">
@@ -24,6 +24,10 @@
 
             <DataTemplate DataType="{x:Type viewModels:ReceivedLettersViewModel}">
                 <views:ReceivedLettersView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:AddRowViewModel}">
+                <views:AddRowView/>
             </DataTemplate>
 
         </ResourceDictionary>

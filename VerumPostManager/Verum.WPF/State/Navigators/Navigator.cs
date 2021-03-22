@@ -12,7 +12,7 @@ using Verum.WPF.ViewModel;
 namespace Verum.WPF.State.Navigators
 {
     public class Navigator : ObservableObject, INavigator
-    {
+    {      
         private BaseViewModel currentViewModel;
         public BaseViewModel CurrentViewModel
         {
@@ -25,6 +25,8 @@ namespace Verum.WPF.State.Navigators
                 currentViewModel = value;
                 OnPropertyChanged(nameof(CurrentViewModel));
             }        
-        }           
+        }
+
+        public bool Test { get; set; } = true;
     }
 }

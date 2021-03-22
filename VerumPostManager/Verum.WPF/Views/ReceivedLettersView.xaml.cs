@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Verum.WPF.View
+namespace Verum.WPF.Views
 {
     /// <summary>
     /// Interaction logic for ReceivedLettersView.xaml

@@ -14,10 +14,10 @@ namespace Verum.WPF.ViewModel
         public ReceivedLettersViewModel()
         {
             ReceivedLetter letters = new ReceivedLetter { Id = 1, Attachment = "Received", Comment = "Received", Content = "Received", Date = DateTime.Now };
-            CustomerList.Add(letters);
+            ReceivedList.Add(letters);
         }
 
-        public ObservableCollection<ReceivedLetter> CustomerList { get; set; } = new ObservableCollection<ReceivedLetter>();
+        public ObservableCollection<ReceivedLetter> ReceivedList { get; set; } = new ObservableCollection<ReceivedLetter>();
 
         public ReceivedLetter SelectedItem { get; set; }
 
@@ -36,6 +36,26 @@ namespace Verum.WPF.ViewModel
                     });
 
                 return deleteRowCommand;
+            }
+        }
+
+        private ICommand addRowCommand;
+
+        public ICommand AddRowCommand
+        {
+            get
+            {
+                addRowCommand = new RelayCommand(
+                    (object o) =>
+                    {
+
+                    },
+                    (object e) =>
+                    {
+                        return true;
+                    });
+
+                return addRowCommand;
             }
         }
     }

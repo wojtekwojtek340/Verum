@@ -4,10 +4,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Verum.DataAccess.CQRS;
 using Verum.DataAccess.Entities;
-using Verum.WPF.ViewModel;
+using Verum.WPF.State.Navigators;
 
 namespace Verum.WPF.ViewModel
 {
@@ -15,12 +16,12 @@ namespace Verum.WPF.ViewModel
     {
         public CustomersViewModel()
         {
-            CustomerList.Add(new Customer { Id = 1, Comments = "Customer", Country = "Customer", Name = "Customer", PostCode = "Customer", Street = "Customer", Town = "Customer" });      
+            CustomerList.Add(new Customer { Id = 1, Comments = "Customer", Country = "Customer", Name = "Customer", PostCode = "Customer", Street = "Customer", Town = "Customer" });
         }
 
         public ObservableCollection<Customer> CustomerList { get; set; } = new ObservableCollection<Customer>();
-
         public Customer SelectedItem { get; set; }
+
 
         private ICommand deleteRowCommand;
         public ICommand DeleteRowCommand
@@ -41,6 +42,24 @@ namespace Verum.WPF.ViewModel
             }
         }
 
+        private ICommand addRowCommand;        
 
+        public ICommand AddRowCommand
+        {
+            get
+            {
+                addRowCommand = new RelayCommand(
+                    (object o) =>
+                    {
+                        
+                    },
+                    (object e) =>
+                    {
+                        return true;
+                    });
+
+                return addRowCommand;
+            }
+        }
     }
 }

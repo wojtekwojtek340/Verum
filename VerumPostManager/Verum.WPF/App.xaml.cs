@@ -66,7 +66,7 @@ namespace Verum.WPF
             //Start window
             services.AddSingleton<MainWindow>(s => new MainWindow()
             {
-                DataContext = s.GetRequiredService<MainViewModel>(),             
+                DataContext = s.GetRequiredService<MainViewModel>()           
                 
             });
 

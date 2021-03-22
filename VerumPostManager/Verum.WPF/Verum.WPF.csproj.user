@@ -48,10 +48,10 @@
     <Page Update="Styles\Common.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\DataGridStyle.xaml">
+    <Page Update="Styles\NavigationButtonStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\NavigationButtonStyle.xaml">
+    <Page Update="Styles\NavigationGridStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\RadioButtonStyle.xaml">

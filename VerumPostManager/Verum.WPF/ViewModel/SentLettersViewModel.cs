@@ -13,23 +13,12 @@ namespace Verum.WPF.ViewModel
     {
         public SentLettersViewModel()
         {
-            SentLetter letters = new SentLetter { Id = 1, Attachment = "fds", Comment = "test", Content = "test", Date = DateTime.Now };
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
+            SentLetter letters = new SentLetter { Id = 1, Attachment = "Sent", Comment = "Sent", Content = "Sent", Date = DateTime.Now };
+            SentList.Add(letters);
+
         }
 
-        public ObservableCollection<SentLetter> CustomerList { get; set; } = new ObservableCollection<SentLetter>();
+        public ObservableCollection<SentLetter> SentList { get; set; } = new ObservableCollection<SentLetter>();
 
         public SentLetter SelectedItem { get; set; }
 
@@ -48,6 +37,26 @@ namespace Verum.WPF.ViewModel
                     });
 
                 return deleteRowCommand;
+            }
+        }
+
+        private ICommand addRowCommand;
+
+        public ICommand AddRowCommand
+        {
+            get
+            {
+                addRowCommand = new RelayCommand(
+                    (object o) =>
+                    {
+
+                    },
+                    (object e) =>
+                    {
+                        return true;
+                    });
+
+                return addRowCommand;
             }
         }
     }
