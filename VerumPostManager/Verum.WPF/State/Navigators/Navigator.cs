@@ -25,10 +25,6 @@ namespace Verum.WPF.State.Navigators
                 currentViewModel = value;
                 OnPropertyChanged(nameof(CurrentViewModel));
             }        
-        }
-
-        public ICommand UpdateViewModelCommand => new UpdateViewModelCommand(this);
-
-        
+        }           
     }
 }

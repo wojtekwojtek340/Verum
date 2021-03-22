@@ -10,7 +10,9 @@ using System.Windows;
 using Verum.DataAccess;
 using Verum.DataAccess.CQRS;
 using Verum.DataAccess.CQRS.Queries.Employees;
+using Verum.WPF.State.Navigators;
 using Verum.WPF.ViewModel;
+using Verum.WPF.ViewModel.Factories;
 
 namespace Verum.WPF
 {
@@ -36,10 +38,36 @@ namespace Verum.WPF
             services.AddTransient<ICommandExecutor, CommandExecutor>();
             services.AddDbContext<VerumContext>(opt => opt.UseSqlServer("Server=DESKTOP-TH6F0L5;Initial Catalog=VerumDb;User ID=Verum;password=Verum;Integrated Security=True;Trusted_Connection=True;"));
 
+            //Navigation
+            services.AddSingleton<INavigator, Navigator>();
+            services.AddSingleton<IVerumViewModelFactory, VerumViewModelFactory>();
+
+            //Delegates
+            services.AddSingleton<CreateViewModel<CustomersViewModel>>(services =>
+            {
+                return () => services.GetRequiredService<CustomersViewModel>();
+            });
+
+            services.AddSingleton<CreateViewModel<SentLettersViewModel>>(services =>
+            {
+                return () => services.GetRequiredService<SentLettersViewModel>();
+            });
+
+            services.AddSingleton<CreateViewModel<ReceivedLettersViewModel>>(services =>
+            {
+                return () => services.GetRequiredService<ReceivedLettersViewModel>();
+            });
+
+            services.AddSingleton<CreateViewModel<LoginViewModel>>(services =>
+            {
+                return () => services.GetRequiredService<LoginViewModel>();
+            });
+
             //Start window
             services.AddSingleton<MainWindow>(s => new MainWindow()
             {
-                DataContext = s.GetRequiredService<MainViewModel>()
+                DataContext = s.GetRequiredService<MainViewModel>(),             
+                
             });
 
             serviceProvider = services.BuildServiceProvider();

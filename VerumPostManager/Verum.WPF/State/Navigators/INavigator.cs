@@ -17,6 +17,5 @@ namespace Verum.WPF.State.Navigators
     public interface INavigator
     {
         BaseViewModel CurrentViewModel { get; set; }
-        ICommand UpdateViewModelCommand { get; }
     }
 }

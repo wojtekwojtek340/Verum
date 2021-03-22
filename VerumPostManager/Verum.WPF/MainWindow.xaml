@@ -60,7 +60,7 @@
                         BorderBrush="Gray"
                         BorderThickness="0 1 1 0">
                 </Border>
-                <controls:SideNavigationBar DataContext="{Binding Navigator}"/>
+                <controls:SideNavigationBar/>
             </Grid>
 
 

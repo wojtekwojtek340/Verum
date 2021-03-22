@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dell\\Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj": {}
+    "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dell\\Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj": {
+    "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
+        "projectUniqueName": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
         "projectName": "Verum.ApplicationServices",
-        "projectPath": "C:\\Users\\Dell\\Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dell\\Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\obj\\",
+        "projectPath": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
+        "packagesPath": "C:\\Users\\wojte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\wojte\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

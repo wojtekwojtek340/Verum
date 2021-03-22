@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Verum.WPF.State.Navigators;
 using Verum.WPF.ViewModel;
+using Verum.WPF.ViewModel.Factories;
 
 namespace Verum.WPF.Commands
 {
     public class UpdateViewModelCommand : ICommand
     {
         private readonly INavigator navigator;
+        private readonly IVerumViewModelFactory verumViewModelFactory;
 
-        public UpdateViewModelCommand(INavigator navigator)
+        public UpdateViewModelCommand(INavigator navigator, IVerumViewModelFactory verumViewModelFactory)
         {
             this.navigator = navigator;
+            this.verumViewModelFactory = verumViewModelFactory;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -29,20 +32,7 @@ namespace Verum.WPF.Commands
         {
             if (parameter is ViewType viewType)
             {
-                switch (viewType)
-                {
-                    case ViewType.Customers:
-                        navigator.CurrentViewModel = new CustomersViewModel();
-                        break;
-                    case ViewType.Sent:
-                        navigator.CurrentViewModel = new SentLettersViewModel();
-                        break;
-                    case ViewType.Received:
-                        navigator.CurrentViewModel = new ReceivedLettersViewModel();
-                        break;
-                    default:
-                        break;
-                }
+                navigator.CurrentViewModel = verumViewModelFactory.CreateViewModel(viewType);
             }
         }
     }

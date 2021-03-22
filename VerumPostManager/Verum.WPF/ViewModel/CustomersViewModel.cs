@@ -15,19 +15,7 @@ namespace Verum.WPF.ViewModel
     {
         public CustomersViewModel()
         {
-            CustomerList.Add(new Customer { Id = 1, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 2, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 3, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 4, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 5, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 6, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 7, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 8, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 9, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 10, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 11, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 12, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });
-            CustomerList.Add(new Customer { Id = 13, Comments = "test", Country = "test", Name = "Wojek", PostCode = "test", Street = "tesd", Town = "tese" });         
+            CustomerList.Add(new Customer { Id = 1, Comments = "Customer", Country = "Customer", Name = "Customer", PostCode = "Customer", Street = "Customer", Town = "Customer" });      
         }
 
         public ObservableCollection<Customer> CustomerList { get; set; } = new ObservableCollection<Customer>();

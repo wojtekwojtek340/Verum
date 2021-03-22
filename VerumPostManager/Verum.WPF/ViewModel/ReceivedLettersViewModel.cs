@@ -13,19 +13,7 @@ namespace Verum.WPF.ViewModel
     {
         public ReceivedLettersViewModel()
         {
-            ReceivedLetter letters = new ReceivedLetter { Id = 1, Attachment = "fds", Comment = "test", Content = "test", Date = DateTime.Now };
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
-            CustomerList.Add(letters);
+            ReceivedLetter letters = new ReceivedLetter { Id = 1, Attachment = "Received", Comment = "Received", Content = "Received", Date = DateTime.Now };
             CustomerList.Add(letters);
         }
 

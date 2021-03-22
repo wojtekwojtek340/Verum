@@ -9,6 +9,7 @@ using Verum.WPF.Models;
 
 namespace Verum.WPF.ViewModel
 {
+    public delegate TViewModel CreateViewModel<TViewModel>() where TViewModel : BaseViewModel;
     public class BaseViewModel : ObservableObject
     {
 
