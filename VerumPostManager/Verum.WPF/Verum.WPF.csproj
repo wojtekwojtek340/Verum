@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Verum.DataAccess\Verum.DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="State\NewFolder\" />
+  </ItemGroup>
+
 </Project>

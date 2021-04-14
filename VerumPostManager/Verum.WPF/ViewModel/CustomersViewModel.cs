@@ -14,8 +14,11 @@ namespace Verum.WPF.ViewModel
 {
     public class CustomersViewModel : BaseViewModel
     {
-        public CustomersViewModel()
+        private readonly IRenavigator renavigator;
+
+        public CustomersViewModel(IRenavigator renavigator)
         {
+            this.renavigator = renavigator;
             CustomerList.Add(new Customer { Id = 1, Comments = "Customer", Country = "Customer", Name = "Customer", PostCode = "Customer", Street = "Customer", Town = "Customer" });
         }
 
@@ -51,7 +54,7 @@ namespace Verum.WPF.ViewModel
                 addRowCommand = new RelayCommand(
                     (object o) =>
                     {
-                        
+                        renavigator.Renavigate(ViewType.AddRow);
                     },
                     (object e) =>
                     {

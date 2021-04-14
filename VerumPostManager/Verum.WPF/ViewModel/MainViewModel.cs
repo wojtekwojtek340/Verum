@@ -12,14 +12,14 @@ namespace Verum.WPF.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
-        public INavigator Navigator { get; }
         public ICommand UpdateViewModelCommand { get; }
+        public IRenavigator Renavigator { get; }
 
-        public MainViewModel(INavigator navigator, IVerumViewModelFactory verumViewModelFactory)
+        public MainViewModel(IRenavigator renavigator, ICommand updateViewModelCommand)
         {
-            Navigator = navigator;
-            UpdateViewModelCommand = new UpdateViewModelCommand(navigator, verumViewModelFactory);
-            UpdateViewModelCommand.Execute(ViewType.Customers);
+            Renavigator = renavigator;
+            UpdateViewModelCommand = updateViewModelCommand;
+            Renavigator.Renavigate(ViewType.Customers);
         }
     }
 }

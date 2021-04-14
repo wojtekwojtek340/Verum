@@ -12,13 +12,12 @@ namespace Verum.WPF.Commands
 {
     public class UpdateViewModelCommand : ICommand
     {
-        private readonly INavigator navigator;
-        private readonly IVerumViewModelFactory verumViewModelFactory;
+        private readonly IRenavigator renavigator;
 
-        public UpdateViewModelCommand(INavigator navigator, IVerumViewModelFactory verumViewModelFactory)
+        public UpdateViewModelCommand(IRenavigator renavigator)
         {
-            this.navigator = navigator;
-            this.verumViewModelFactory = verumViewModelFactory;
+
+            this.renavigator = renavigator;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -32,7 +31,7 @@ namespace Verum.WPF.Commands
         {
             if (parameter is ViewType viewType)
             {
-                navigator.CurrentViewModel = verumViewModelFactory.CreateViewModel(viewType);
+                renavigator.Renavigate(viewType);
             }
         }
     }

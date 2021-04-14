@@ -12,16 +12,22 @@ namespace Verum.WPF.ViewModel.Factories
         private readonly CreateViewModel<CustomersViewModel> createCustomerViewModel;
         private readonly CreateViewModel<SentLettersViewModel> createSentLettersViewModel;
         private readonly CreateViewModel<ReceivedLettersViewModel> createReceivedLettersViewModel;
+        private readonly CreateViewModel<AddRowViewModel> createAddRowViewModel;
         private readonly CreateViewModel<LoginViewModel> createLoginViewModel;
+        private readonly CreateViewModel<EditRowViewModel> createEditRowViewModel;
 
         public VerumViewModelFactory(CreateViewModel<CustomersViewModel> createCustomerViewModel,
             CreateViewModel<SentLettersViewModel> createSentLettersViewModel,
             CreateViewModel<ReceivedLettersViewModel> createReceivedLettersViewModel,
+            CreateViewModel<AddRowViewModel> createAddRowViewModel,
+            CreateViewModel<EditRowViewModel> createEditRowViewModel,
             CreateViewModel<LoginViewModel> createLoginViewModel)
         {
             this.createCustomerViewModel = createCustomerViewModel;
             this.createSentLettersViewModel = createSentLettersViewModel;
             this.createReceivedLettersViewModel = createReceivedLettersViewModel;
+            this.createAddRowViewModel = createAddRowViewModel;
+            this.createEditRowViewModel = createEditRowViewModel;
             this.createLoginViewModel = createLoginViewModel;
         }
 
@@ -35,6 +41,12 @@ namespace Verum.WPF.ViewModel.Factories
                     return createSentLettersViewModel();
                 case ViewType.Received:
                     return createReceivedLettersViewModel();
+                case ViewType.Login:
+                    return createLoginViewModel();
+                case ViewType.AddRow:
+                    return createAddRowViewModel();
+                case ViewType.EditRow:
+                    return createEditRowViewModel();
                 default:
                     throw new ArgumentException("The ViewType does not have a ViewModel.");
             }

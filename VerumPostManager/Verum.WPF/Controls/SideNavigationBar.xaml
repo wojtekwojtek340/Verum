@@ -30,21 +30,21 @@
                      Content="Kontakty"
                      HorizontalContentAlignment="Center"
                      BorderThickness="0 0 1 1"
-                     IsChecked="{Binding Navigator.CurrentViewModel, Converter={StaticResource EqualValueToParameterConverter}, Mode=OneWay, ConverterParameter={x:Type vm:CustomersViewModel}}"
+                     IsChecked="{Binding Renavigator.Navigator.CurrentViewModel, Converter={StaticResource EqualValueToParameterConverter}, Mode=OneWay, ConverterParameter={x:Type vm:CustomersViewModel}}"
                      Command="{Binding UpdateViewModelCommand}"
                      CommandParameter="{x:Static nav:ViewType.Customers}"/>
         <RadioButton Grid.Row="1"
                      Content="Wysłane"
                      HorizontalContentAlignment="Center"
                      BorderThickness="0 0 1 1"
-                     IsChecked="{Binding Navigator.CurrentViewModel, Converter={StaticResource EqualValueToParameterConverter}, Mode=OneWay, ConverterParameter={x:Type vm:SentLettersViewModel}}"
+                     IsChecked="{Binding Renavigator.Navigator.CurrentViewModel, Converter={StaticResource EqualValueToParameterConverter}, Mode=OneWay, ConverterParameter={x:Type vm:SentLettersViewModel}}"
                      Command="{Binding UpdateViewModelCommand}"
                      CommandParameter="{x:Static nav:ViewType.Sent}"/>
         <RadioButton Grid.Row="2"
                      Content="Odebrane"
                      HorizontalContentAlignment="Center"
                      BorderThickness="0 0 1 1"
-                     IsChecked="{Binding Navigator.CurrentViewModel, Converter={StaticResource EqualValueToParameterConverter}, Mode=OneWay, ConverterParameter={x:Type vm:ReceivedLettersViewModel}}"
+                     IsChecked="{Binding Renavigator.Navigator.CurrentViewModel, Converter={StaticResource EqualValueToParameterConverter}, Mode=OneWay, ConverterParameter={x:Type vm:ReceivedLettersViewModel}}"
                      Command="{Binding UpdateViewModelCommand}"
                      CommandParameter="{x:Static nav:ViewType.Received}"/>
     </Grid>

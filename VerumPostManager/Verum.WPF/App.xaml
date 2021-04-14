@@ -30,6 +30,10 @@
                 <views:AddRowView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModels:EditRowViewModel}">
+                <views:EditRowView/>
+            </DataTemplate>
+
         </ResourceDictionary>
         
     </Application.Resources>

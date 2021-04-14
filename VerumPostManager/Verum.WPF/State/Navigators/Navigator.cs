@@ -27,6 +27,5 @@ namespace Verum.WPF.State.Navigators
             }        
         }
 
-        public bool Test { get; set; } = true;
     }
 }

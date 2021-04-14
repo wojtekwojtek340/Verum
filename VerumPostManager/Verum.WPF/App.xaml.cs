@@ -7,10 +7,13 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using Verum.DataAccess;
 using Verum.DataAccess.CQRS;
 using Verum.DataAccess.CQRS.Queries.Employees;
+using Verum.WPF.Commands;
 using Verum.WPF.State.Navigators;
+using Verum.WPF.State.Windows;
 using Verum.WPF.ViewModel;
 using Verum.WPF.ViewModel.Factories;
 
@@ -31,7 +34,9 @@ namespace Verum.WPF
             services.AddSingleton<CustomersViewModel>();
             services.AddSingleton<SentLettersViewModel>();
             services.AddSingleton<ReceivedLettersViewModel>();
+            services.AddSingleton<AddRowViewModel>();
             services.AddSingleton<LoginViewModel>();
+            services.AddSingleton<EditRowViewModel>();
 
             //EF and CQRS added
             services.AddTransient<IQueryExecutor, QueryExecutor>();
@@ -39,8 +44,11 @@ namespace Verum.WPF
             services.AddDbContext<VerumContext>(opt => opt.UseSqlServer("Server=DESKTOP-TH6F0L5;Initial Catalog=VerumDb;User ID=Verum;password=Verum;Integrated Security=True;Trusted_Connection=True;"));
 
             //Navigation
+            services.AddSingleton<IRenavigator, Renavigator>();
             services.AddSingleton<INavigator, Navigator>();
+            services.AddSingleton<IWindowsService, WindowsService>();
             services.AddSingleton<IVerumViewModelFactory, VerumViewModelFactory>();
+            services.AddSingleton<ICommand, UpdateViewModelCommand>();
 
             //Delegates
             services.AddSingleton<CreateViewModel<CustomersViewModel>>(services =>
@@ -62,6 +70,18 @@ namespace Verum.WPF
             {
                 return () => services.GetRequiredService<LoginViewModel>();
             });
+
+            services.AddSingleton<CreateViewModel<AddRowViewModel>>(services =>
+            {
+                return () => services.GetRequiredService<AddRowViewModel>();
+            });
+
+            services.AddSingleton<CreateViewModel<EditRowViewModel>>(services =>
+            {
+                return () => services.GetRequiredService<EditRowViewModel>();
+            });
+
+
 
             //Start window
             services.AddSingleton<MainWindow>(s => new MainWindow()

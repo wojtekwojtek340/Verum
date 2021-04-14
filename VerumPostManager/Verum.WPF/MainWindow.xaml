@@ -41,8 +41,7 @@
                 </controls:TopEdge>
             </Grid>
             
-            <Grid Grid.Row="1"
-                  Style="{StaticResource NavigationGridStyle}">
+            <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
@@ -55,7 +54,7 @@
 
                 <Grid Grid.ColumnSpan="2"
                       Style="{StaticResource NavigationGridStyle}">
-                    <controls:TopNavigationBar DataContext="{Binding Navigator.CurrentViewModel}"/>
+                    <controls:TopNavigationBar DataContext="{Binding Renavigator.Navigator.CurrentViewModel}"/>
                 </Grid>
 
                 <Grid Grid.Row="2"
@@ -69,7 +68,7 @@
                     <controls:SideNavigationBar/>
                 </Grid>
 
-                <ContentControl Content="{Binding Navigator.CurrentViewModel}"
+                <ContentControl Content="{Binding Renavigator.Navigator.CurrentViewModel}"
                                 Grid.Row="1"
                                 Grid.Column="1">
                 </ContentControl>
