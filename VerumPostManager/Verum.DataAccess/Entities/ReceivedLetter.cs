@@ -20,7 +20,7 @@ namespace Verum.DataAccess.Entities
         public string Attachment { get; set; }
 
         [Required]
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
         [Required]
         public Customer Sender { get; set; }

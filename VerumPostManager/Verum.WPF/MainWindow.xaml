@@ -10,7 +10,7 @@
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStyle="None"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="550" Width="900"
         Background="Transparent">
 
     <i:Interaction.Behaviors>
@@ -53,21 +53,21 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid Grid.ColumnSpan="2"
-                      Style="{StaticResource NavigationGridStyle}">
+                      Style="{DynamicResource NavigationGridStyle}">
                     <controls:TopNavigationBar DataContext="{Binding Renavigator.Navigator.CurrentViewModel}"/>
                 </Grid>
 
                 <Grid Grid.Row="2"
                       Grid.Column="0"
-                      Style="{StaticResource NavigationGridStyle}">
+                      Style="{DynamicResource NavigationGridStyle}">
                     <Border CornerRadius="0 0 0 9"
                             Background="{StaticResource BrushPrimary2}"
                             BorderBrush="Gray"
                             BorderThickness="0 1 1 0">
                     </Border>
                     <controls:SideNavigationBar/>
-                </Grid>
-
+                </Grid>                
+                
                 <ContentControl Content="{Binding Renavigator.Navigator.CurrentViewModel}"
                                 Grid.Row="1"
                                 Grid.Column="1">

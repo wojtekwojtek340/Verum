@@ -11,9 +11,11 @@ using System.Windows.Input;
 using Verum.DataAccess;
 using Verum.DataAccess.CQRS;
 using Verum.DataAccess.CQRS.Queries.Employees;
+using Verum.DataAccess.Entities;
 using Verum.WPF.Commands;
+using Verum.WPF.State.LocalServices.CurrentViewModelService;
+using Verum.WPF.State.LocalServices.PanelsVisibilityService;
 using Verum.WPF.State.Navigators;
-using Verum.WPF.State.Windows;
 using Verum.WPF.ViewModel;
 using Verum.WPF.ViewModel.Factories;
 
@@ -31,24 +33,36 @@ namespace Verum.WPF
 
             //ViewModels added
             services.AddSingleton<MainViewModel>();
-            services.AddSingleton<CustomersViewModel>();
-            services.AddSingleton<SentLettersViewModel>();
-            services.AddSingleton<ReceivedLettersViewModel>();
-            services.AddSingleton<AddRowViewModel>();
+            services.AddTransient<CustomersViewModel>();
+            services.AddTransient<SentLettersViewModel>();
+            services.AddTransient<ReceivedLettersViewModel>();
             services.AddSingleton<LoginViewModel>();
-            services.AddSingleton<EditRowViewModel>();
+            services.AddTransient<AddCustomerViewModel>();
+            services.AddTransient<AddReceivedLetterViewModel>();
+            services.AddTransient<AddSentLetterViewModel>();
+            services.AddTransient<EditCustomerViewModel>();
+            services.AddTransient<EditReceivedLetterViewModel>();
+            services.AddTransient<EditSentLetterViewModel>();
 
-            //EF and CQRS added
+            //CQRS
             services.AddTransient<IQueryExecutor, QueryExecutor>();
             services.AddTransient<ICommandExecutor, CommandExecutor>();
+
+            //EntityFramework
             services.AddDbContext<VerumContext>(opt => opt.UseSqlServer("Server=DESKTOP-TH6F0L5;Initial Catalog=VerumDb;User ID=Verum;password=Verum;Integrated Security=True;Trusted_Connection=True;"));
 
             //Navigation
             services.AddSingleton<IRenavigator, Renavigator>();
             services.AddSingleton<INavigator, Navigator>();
-            services.AddSingleton<IWindowsService, WindowsService>();
-            services.AddSingleton<IVerumViewModelFactory, VerumViewModelFactory>();
             services.AddSingleton<ICommand, UpdateViewModelCommand>();
+
+            //ViewModelFactory
+            services.AddSingleton<IVerumViewModelFactory, VerumViewModelFactory>();
+
+            //LocalServices
+            services.AddSingleton<IPanelsVisibilityService, PanelsVisibilityService>();
+            services.AddScoped(typeof(ILocalStorageService<>), typeof(LocalStorageService<>));
+
 
             //Delegates
             services.AddSingleton<CreateViewModel<CustomersViewModel>>(services =>
@@ -71,14 +85,34 @@ namespace Verum.WPF
                 return () => services.GetRequiredService<LoginViewModel>();
             });
 
-            services.AddSingleton<CreateViewModel<AddRowViewModel>>(services =>
+            services.AddSingleton<CreateViewModel<AddCustomerViewModel>>(services =>
             {
-                return () => services.GetRequiredService<AddRowViewModel>();
+                return () => services.GetRequiredService<AddCustomerViewModel>();
             });
 
-            services.AddSingleton<CreateViewModel<EditRowViewModel>>(services =>
+            services.AddSingleton<CreateViewModel<AddSentLetterViewModel>>(services =>
             {
-                return () => services.GetRequiredService<EditRowViewModel>();
+                return () => services.GetRequiredService<AddSentLetterViewModel>();
+            });
+
+            services.AddSingleton<CreateViewModel<AddReceivedLetterViewModel>>(services =>
+            {
+                return () => services.GetRequiredService<AddReceivedLetterViewModel>();
+            });
+
+            services.AddSingleton<CreateViewModel<EditCustomerViewModel>>(services =>
+            {
+                return () => services.GetRequiredService<EditCustomerViewModel>();
+            });
+
+            services.AddSingleton<CreateViewModel<EditSentLetterViewModel>>(services =>
+            {
+                return () => services.GetRequiredService<EditSentLetterViewModel>();
+            });
+
+            services.AddSingleton<CreateViewModel<EditReceivedLetterViewModel>>(services =>
+            {
+                return () => services.GetRequiredService<EditReceivedLetterViewModel>();
             });
 
 

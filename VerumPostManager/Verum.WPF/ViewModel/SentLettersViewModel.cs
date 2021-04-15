@@ -5,7 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Verum.DataAccess.CQRS;
+using Verum.DataAccess.CQRS.Queries.SentLetters;
 using Verum.DataAccess.Entities;
+using Verum.WPF.State.LocalServices.CurrentViewModelService;
+using Verum.WPF.State.LocalServices.PanelsVisibilityService;
 using Verum.WPF.State.Navigators;
 
 namespace Verum.WPF.ViewModel
@@ -13,14 +17,26 @@ namespace Verum.WPF.ViewModel
     public class SentLettersViewModel : BaseViewModel
     {
         private readonly IRenavigator renavigator;
+
+        private readonly ILocalStorageService<SentLetter> localStorage;
+
+        private readonly IQueryExecutor queryExecutor;
         public ObservableCollection<SentLetter> SentList { get; set; } = new ObservableCollection<SentLetter>();
         public SentLetter SelectedItem { get; set; }
-        public SentLettersViewModel(IRenavigator renavigator)
+        public SentLettersViewModel(IRenavigator renavigator, ILocalStorageService<SentLetter> localStorage, IPanelsVisibilityService panelsVisibilityService, IQueryExecutor queryExecutor)
         {
-            SentLetter letters = new SentLetter { Id = 1, Attachment = "Sent", Comment = "Sent", Content = "Sent", Date = DateTime.Now };
-            SentList.Add(letters);
+            panelsVisibilityService.PanelsVisibility = true;
             this.renavigator = renavigator;
-        }       
+            this.localStorage = localStorage;
+            this.queryExecutor = queryExecutor;
+            GetData();
+        }
+        private async Task GetData()
+        {
+            var query = new GetAllSentLettersQuery();
+            var collection = await queryExecutor.Execute(query);
+            collection.ForEach(SentList.Add);
+        }
 
         private ICommand deleteRowCommand;
         public ICommand DeleteRowCommand
@@ -30,7 +46,7 @@ namespace Verum.WPF.ViewModel
                 deleteRowCommand = new RelayCommand(
                     (object o) =>
                     {
-
+                        SentList.Remove(SelectedItem);
                     },
                     (object e) =>
                     {
@@ -41,7 +57,27 @@ namespace Verum.WPF.ViewModel
             }
         }
 
-        private ICommand addRowCommand;       
+        private ICommand editRowCommand;
+        public ICommand EditRowCommand
+        {
+            get
+            {
+                editRowCommand = new RelayCommand(
+                    (object o) =>
+                    {
+                        localStorage.Data = SelectedItem;
+                        renavigator.Renavigate(ViewType.EditSentLetter);
+                    },
+                    (object e) =>
+                    {
+                        return SelectedItem != null;
+                    });
+
+                return editRowCommand;
+            }
+        }
+
+        private ICommand addRowCommand;
 
         public ICommand AddRowCommand
         {
@@ -50,7 +86,7 @@ namespace Verum.WPF.ViewModel
                 addRowCommand = new RelayCommand(
                     (object o) =>
                     {
-                        renavigator.Renavigate(ViewType.AddRow);
+                        renavigator.Renavigate(ViewType.AddSentLetter);
                     },
                     (object e) =>
                     {

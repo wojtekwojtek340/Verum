@@ -4,7 +4,7 @@
     <Style x:Key="NavigationGridStyle" TargetType="Grid">
 
         <Style.Triggers>
-            <DataTrigger Binding="{Binding WindowsService.IsAddingNow}" Value="True">
+            <DataTrigger Binding="{Binding PanelsVisibility.PanelsVisibility}" Value="False">
                 <Setter Property="Visibility" Value="Collapsed"/>
             </DataTrigger>
         </Style.Triggers>

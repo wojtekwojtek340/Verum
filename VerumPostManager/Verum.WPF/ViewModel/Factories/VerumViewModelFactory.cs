@@ -12,23 +12,35 @@ namespace Verum.WPF.ViewModel.Factories
         private readonly CreateViewModel<CustomersViewModel> createCustomerViewModel;
         private readonly CreateViewModel<SentLettersViewModel> createSentLettersViewModel;
         private readonly CreateViewModel<ReceivedLettersViewModel> createReceivedLettersViewModel;
-        private readonly CreateViewModel<AddRowViewModel> createAddRowViewModel;
         private readonly CreateViewModel<LoginViewModel> createLoginViewModel;
-        private readonly CreateViewModel<EditRowViewModel> createEditRowViewModel;
+        private readonly CreateViewModel<AddCustomerViewModel> createAddCustomerViewModel;
+        private readonly CreateViewModel<AddSentLetterViewModel> createAddSentLetterViewModel;
+        private readonly CreateViewModel<AddReceivedLetterViewModel> createAddReceivedLetterViewModel;
+        private readonly CreateViewModel<EditCustomerViewModel> createEditCustomerViewModel;
+        private readonly CreateViewModel<EditSentLetterViewModel> createEditSentLetterViewModel;
+        private readonly CreateViewModel<EditReceivedLetterViewModel> createEditReceivedLetterViewModel;
 
         public VerumViewModelFactory(CreateViewModel<CustomersViewModel> createCustomerViewModel,
             CreateViewModel<SentLettersViewModel> createSentLettersViewModel,
             CreateViewModel<ReceivedLettersViewModel> createReceivedLettersViewModel,
-            CreateViewModel<AddRowViewModel> createAddRowViewModel,
-            CreateViewModel<EditRowViewModel> createEditRowViewModel,
-            CreateViewModel<LoginViewModel> createLoginViewModel)
+            CreateViewModel<LoginViewModel> createLoginViewModel,
+            CreateViewModel<AddCustomerViewModel> createAddCustomerViewModel,
+            CreateViewModel<AddSentLetterViewModel> createAddSentLetterViewModel,
+            CreateViewModel<AddReceivedLetterViewModel> createAddReceivedLetterViewModel,
+            CreateViewModel<EditCustomerViewModel> createEditCustomerViewModel,
+            CreateViewModel<EditSentLetterViewModel> createEditSentLetterViewModel,
+            CreateViewModel<EditReceivedLetterViewModel> createEditReceivedLetterViewModel)
         {
             this.createCustomerViewModel = createCustomerViewModel;
             this.createSentLettersViewModel = createSentLettersViewModel;
             this.createReceivedLettersViewModel = createReceivedLettersViewModel;
-            this.createAddRowViewModel = createAddRowViewModel;
-            this.createEditRowViewModel = createEditRowViewModel;
             this.createLoginViewModel = createLoginViewModel;
+            this.createAddCustomerViewModel = createAddCustomerViewModel;
+            this.createAddSentLetterViewModel = createAddSentLetterViewModel;
+            this.createAddReceivedLetterViewModel = createAddReceivedLetterViewModel;
+            this.createEditCustomerViewModel = createEditCustomerViewModel;
+            this.createEditSentLetterViewModel = createEditSentLetterViewModel;
+            this.createEditReceivedLetterViewModel = createEditReceivedLetterViewModel;
         }
 
         public BaseViewModel CreateViewModel(ViewType viewType)
@@ -43,10 +55,18 @@ namespace Verum.WPF.ViewModel.Factories
                     return createReceivedLettersViewModel();
                 case ViewType.Login:
                     return createLoginViewModel();
-                case ViewType.AddRow:
-                    return createAddRowViewModel();
-                case ViewType.EditRow:
-                    return createEditRowViewModel();
+                case ViewType.AddCustomer:
+                    return createAddCustomerViewModel();
+                case ViewType.AddSentLetter:
+                    return createAddSentLetterViewModel();
+                case ViewType.AddReceivedLetter:
+                    return createAddReceivedLetterViewModel();
+                case ViewType.EditCustomer:
+                    return createEditCustomerViewModel();
+                case ViewType.EditReceivedLetter:
+                    return createEditReceivedLetterViewModel();
+                case ViewType.EditSentLetter:
+                    return createEditSentLetterViewModel();
                 default:
                     throw new ArgumentException("The ViewType does not have a ViewModel.");
             }

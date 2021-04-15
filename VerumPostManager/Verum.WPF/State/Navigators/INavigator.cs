@@ -14,8 +14,13 @@ namespace Verum.WPF.State.Navigators
         Sent,
         Received,
         Login,
-        AddRow,
-        EditRow
+        AddCustomer,
+        AddSentLetter,
+        AddReceivedLetter,
+        EditCustomer,
+        EditSentLetter,
+        EditReceivedLetter
+
     }
     public interface INavigator
     {

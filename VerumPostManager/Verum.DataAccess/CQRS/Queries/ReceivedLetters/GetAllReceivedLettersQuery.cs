@@ -12,7 +12,7 @@ namespace Verum.DataAccess.CQRS.Queries.ReceivedLetters
     {
         public override async Task<List<ReceivedLetter>> Execute(VerumContext context)
         {
-            var receivedLetters = await context.ReceivedLetters.ToListAsync();
+            var receivedLetters = await context.ReceivedLetters.Include(x => x.Employee).ToListAsync();
             return receivedLetters;
         }
     }

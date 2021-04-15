@@ -12,6 +12,8 @@
                 <ResourceDictionary Source="/Styles/RadioButtonStyle.xaml"/>
                 <ResourceDictionary Source="/Styles/NavigationButtonStyle.xaml"/>
                 <ResourceDictionary Source="/Styles/NavigationGridStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBlockStyle.xaml"/>
+                <ResourceDictionary Source="/Styles/TextBoxStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModels:CustomersViewModel}">
@@ -26,13 +28,30 @@
                 <views:ReceivedLettersView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModels:AddRowViewModel}">
-                <views:AddRowView/>
+            <DataTemplate DataType="{x:Type viewModels:AddCustomerViewModel}">
+                <views:AddCustomerView/>
             </DataTemplate>
 
-            <DataTemplate DataType="{x:Type viewModels:EditRowViewModel}">
-                <views:EditRowView/>
+            <DataTemplate DataType="{x:Type viewModels:AddReceivedLetterViewModel}">
+                <views:AddReceivedLetterView/>
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:AddSentLetterViewModel}">
+                <views:AddSentLetterView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:EditSentLetterViewModel}">
+                <views:EditSentLetterView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:EditReceivedLetterViewModel}">
+                <views:EditReceivedLetterView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:EditCustomerViewModel}">
+                <views:EditCustomerView/>
+            </DataTemplate>
+
 
         </ResourceDictionary>
         

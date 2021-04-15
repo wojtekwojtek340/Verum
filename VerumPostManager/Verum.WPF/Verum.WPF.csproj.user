@@ -16,13 +16,25 @@
     <Compile Update="Controls\TopNavigationBar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\AddRowView.xaml.cs">
+    <Compile Update="Views\AddCustomerView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddReceivedLetterView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\AddSentLetterView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\CustomersView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\EditRowView.xaml.cs">
+    <Compile Update="Views\EditCustomerView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditReceivedLetterView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditSentLetterView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\LoginView.xaml.cs">
@@ -60,13 +72,31 @@
     <Page Update="Styles\RadioButtonStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\AddRowView.xaml">
+    <Page Update="Styles\TextBlockStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\TextBoxStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddCustomerView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddReceivedLetterView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\AddSentLetterView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\CustomersView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\EditRowView.xaml">
+    <Page Update="Views\EditCustomerView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditReceivedLetterView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditSentLetterView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\LoginView.xaml">

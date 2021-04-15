@@ -23,7 +23,7 @@ namespace Verum.DataAccess.Entities
         public bool ConfirmationOfSending { get; set; }
 
         [Required]
-        public DateTime Date { get; set; }
+        public DateTime? Date { get; set; }
 
         [Required]
         public Customer Sender { get; set; }

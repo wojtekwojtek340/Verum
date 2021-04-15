@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Verum.WPF.Views
 {
     /// <summary>
-    /// Interaction logic for EditRowView.xaml
+    /// Interaction logic for EditReceivedLetterView.xaml
     /// </summary>
-    public partial class EditRowView : UserControl
+    public partial class EditReceivedLetterView : UserControl
     {
-        public EditRowView()
+        public EditReceivedLetterView()
         {
             InitializeComponent();
         }

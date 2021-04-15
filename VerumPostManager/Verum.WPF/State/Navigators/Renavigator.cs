@@ -7,8 +7,7 @@ using Verum.WPF.ViewModel.Factories;
 
 namespace Verum.WPF.State.Navigators
 {
-    public class Renavigator : IRenavigator
-    {
+    public class Renavigator : IRenavigator    {
         public IVerumViewModelFactory VerumViewModelFactory { get; }
         public INavigator Navigator { get; }
 
@@ -16,11 +15,7 @@ namespace Verum.WPF.State.Navigators
         {
             this.VerumViewModelFactory = verumViewModelFactory;
             this.Navigator = navigator;
-            VerumViewModelFactory = verumViewModelFactory;
-            Navigator = navigator;
         }
-
-
 
         public void Renavigate(ViewType viewType)
         {
