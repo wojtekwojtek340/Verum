@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Verum.DataAccess.CQRS;
+using Verum.DataAccess.CQRS.Commands.ReceivedLetters;
 using Verum.DataAccess.CQRS.Queries.ReceivedLetters;
 using Verum.DataAccess.Entities;
 using Verum.WPF.State.LocalServices.CurrentViewModelService;
@@ -21,19 +22,23 @@ namespace Verum.WPF.ViewModel
         private readonly ILocalStorageService<ReceivedLetter> localStorage;
 
         private readonly IQueryExecutor queryExecutor;
+        private readonly ICommandExecutor commandExecutor;
+
         public ObservableCollection<ReceivedLetter> ReceivedList { get; set; } = new ObservableCollection<ReceivedLetter>();
         public ReceivedLetter SelectedItem { get; set; }
 
-        public ReceivedLettersViewModel(IRenavigator renavigator, ILocalStorageService<ReceivedLetter> localStorage, IPanelsVisibilityService panelsVisibilityService, IQueryExecutor queryExecutor)
+        public ReceivedLettersViewModel(IRenavigator renavigator, ILocalStorageService<ReceivedLetter> localStorage, IPanelsVisibilityService panelsVisibilityService, IQueryExecutor queryExecutor, ICommandExecutor commandExecutor)
         {
             panelsVisibilityService.PanelsVisibility = true;
             this.renavigator = renavigator;
             this.localStorage = localStorage;
             this.queryExecutor = queryExecutor;
+            this.commandExecutor = commandExecutor;
             GetData();
         }
         private async Task GetData()
         {
+            ReceivedList.Clear();
             var query = new GetAllReceivedLettersQuery();
             var collection = await queryExecutor.Execute(query);
             collection.ForEach(ReceivedList.Add);
@@ -44,10 +49,15 @@ namespace Verum.WPF.ViewModel
         {
             get
             {
-                deleteRowCommand = new RelayCommand(
+                deleteRowCommand = new RelayCommand(async
                     (object o) =>
                     {
-                        ReceivedList.Remove(SelectedItem);
+                        var command = new DeleteReceivedLetterCommand()
+                        {
+                            Parameter = SelectedItem.Id
+                        };
+                        await commandExecutor.Execute(command);
+                        GetData();
                     },
                     (object e) =>
                     {

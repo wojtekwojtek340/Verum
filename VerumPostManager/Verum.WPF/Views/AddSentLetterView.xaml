@@ -61,7 +61,10 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Nadawca" Grid.Column="0"/>
-                    <ComboBox Grid.Column="1" ItemsSource="{Binding}" SelectedItem="{Binding SentLetter.Sender}"/>
+                    <ComboBox Grid.Column="1"
+                              ItemsSource="{Binding CustomerList}"
+                              DisplayMemberPath="Name"
+                              SelectedItem="{Binding SentLetter.Sender}"/>
 
                 </Grid>
 
@@ -73,7 +76,10 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Odbiorca" Grid.Column="0"/>
-                    <ComboBox Grid.Column="1" ItemsSource="{Binding}" SelectedItem="{Binding SentLetter.Recipient}"/>
+                    <ComboBox Grid.Column="1"
+                              ItemsSource="{Binding CustomerList}"
+                              DisplayMemberPath="Name"
+                              SelectedItem="{Binding SentLetter.Recipient}"/>
 
                 </Grid>
 
@@ -85,7 +91,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Treść" Grid.Column="0"/>
-                    <TextBox TextWrapping="Wrap" Height="90" Grid.Column="1" Text="{Binding SentLetter.Content, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox TextWrapping="Wrap" Height="90" Grid.Column="1" Text="{Binding SentLetter.Content, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="400"/>
 
                 </Grid>
 
@@ -97,7 +104,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Komentarz" Grid.Column="0"/>
-                    <TextBox TextWrapping="Wrap" Height="60" Grid.Column="1" Text="{Binding SentLetter.Comment, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox TextWrapping="Wrap" Height="60" Grid.Column="1" Text="{Binding SentLetter.Comment, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="400"/>
 
                 </Grid>
 
@@ -109,7 +117,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Załącznik" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding SentLetter.Attachment, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding SentLetter.Attachment, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="400"/>
 
                 </Grid>
 

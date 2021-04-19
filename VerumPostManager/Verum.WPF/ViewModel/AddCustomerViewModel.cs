@@ -1,12 +1,16 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Verum.DataAccess.CQRS;
+using Verum.DataAccess.CQRS.Commands.Customers;
 using Verum.DataAccess.Entities;
 using Verum.WPF.State.LocalServices.PanelsVisibilityService;
 using Verum.WPF.State.Navigators;
+using Verum.WPF.Validators.Customers;
 
 namespace Verum.WPF.ViewModel
 {
@@ -14,26 +18,69 @@ namespace Verum.WPF.ViewModel
     {
 
         private readonly IRenavigator renavigator;
+
+        private readonly ICommandExecutor commandExecutor;
+
+        protected AddCustomerViewModelValidator Validator { get; set; }
         public Customer Customer { get; set; } = new Customer();
-        public AddCustomerViewModel(IPanelsVisibilityService panelsVisibilityService, IRenavigator renavigator)
+        public AddCustomerViewModel(IPanelsVisibilityService panelsVisibilityService, IRenavigator renavigator, ICommandExecutor commandExecutor)
         {
             panelsVisibilityService.PanelsVisibility = false;
             this.renavigator = renavigator;
+            this.commandExecutor = commandExecutor;
+            Validator = new AddCustomerViewModelValidator();
         }
+        public override ValidationResult SelfValidate()
+        {
+            return Validator.Validate(this);
+        }
+
+        public string Name
+        {
+            get
+            {
+                return Customer.Name;
+            }
+            set
+           {
+                Customer.Name = value;
+                OnPropertyChanged(nameof(Name));                   
+
+            }
+        }
+
+        public string Street
+        {
+            get
+            {
+                return Customer.Street;
+            }
+            set
+            {
+                Customer.Street = value;
+                OnPropertyChanged(nameof(Street));
+
+            }
+        }        
 
         private ICommand addRow;
         public ICommand AddRow
         {
             get
             {
-                addRow = new RelayCommand(
+                addRow = new RelayCommand(async
                     (object o) =>
                     {
-                        
+                        var command = new AddCustomerCommand()
+                        {
+                            Parameter = Customer
+                        };                        
+                        await commandExecutor.Execute(command);
+                        renavigator.Renavigate(ViewType.Customers);
                     },
                     (object e) =>
-                    {
-                        return true;
+                    {                                     
+                        return SelfValidate().IsValid;
                     });
 
                 return addRow;

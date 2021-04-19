@@ -5,11 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Verum.WPF.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">    
-    
-
-    
-
+             d:DesignHeight="450" d:DesignWidth="800">      
     
     <Grid>
         <Grid.Resources>
@@ -52,7 +48,9 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Nazwa" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Name="Name" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                             MaxLength="100"/>
+                    <TextBlock Text="{Binding ElementName=Name, Path=(Validation.Errors)[0].ErrorContent}" />
 
                 </Grid>
 
@@ -64,7 +62,9 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Ulica" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Street, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Name="Street" Text="{Binding Street, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                             MaxLength="50"/>
+                    <TextBlock Text="{Binding ElementName=Street, Path=(Validation.Errors)[0].ErrorContent}" />
 
                 </Grid>
 
@@ -76,7 +76,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Miasto" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Town, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Customer.Town, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="50"/>
 
                 </Grid>
 
@@ -88,7 +89,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Kraj" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Country, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Customer.Country, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="50"/>
 
                 </Grid>
 
@@ -100,7 +102,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Kod Pocztowy" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.PostCode, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Customer.PostCode, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="10"/>
 
                 </Grid>
 
@@ -112,7 +115,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Komentarz" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Comments, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Customer.Comments, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="150"/>
 
                 </Grid>
 

@@ -21,8 +21,11 @@ namespace Verum.WPF.Behaviors
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Window window = (Window)sender;
-            window.DragMove();
+            if(e.LeftButton == MouseButtonState.Pressed)
+            {
+                Window window = (Window)sender;
+                window.DragMove();
+            }
         }
     }
 }

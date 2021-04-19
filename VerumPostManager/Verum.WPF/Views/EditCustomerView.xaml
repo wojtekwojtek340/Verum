@@ -24,7 +24,7 @@
             <!--Top Label-->
             <TextBlock Grid.Row="0"
                    FontSize="48"
-                   Text="Dodawanie Klienta"
+                   Text="Dodawanie Klienta - Edycja"
                    HorizontalAlignment="Center"/>
 
             <!--6 Labels + TextBoxes-->
@@ -47,7 +47,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Nazwa" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Customer.Name, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="100"/>
 
                 </Grid>
 
@@ -59,7 +60,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Ulica" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Street, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Customer.Street, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="50"/>
 
                 </Grid>
 
@@ -71,7 +73,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Miasto" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Town, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Customer.Town, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="50"/>
 
                 </Grid>
 
@@ -83,7 +86,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Kraj" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Country, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Customer.Country, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="50"/>
 
                 </Grid>
 
@@ -95,7 +99,8 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Kod Pocztowy" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.PostCode, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Customer.PostCode, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="10"/>
 
                 </Grid>
 
@@ -107,14 +112,15 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Komentarz" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Comments, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Grid.Column="1" Text="{Binding Customer.Comments, UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="150"/>
 
                 </Grid>
 
                 <Grid Grid.Row="6" Margin="0 5 0 5">
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button Content="Dodaj" Margin="0 0 20 0" Width="100" Height="30"
+                        <Button Content="Edytuj" Margin="0 0 20 0" Width="100" Height="30"
                                 Command="{Binding EditRow}"/>
                         <Button Content="Anuluj" Margin="20 0 0 0" Width="100" Height="30"
                                 Command="{Binding Cancel}"/>
