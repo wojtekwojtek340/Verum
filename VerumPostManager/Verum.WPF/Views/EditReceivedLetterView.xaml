@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Verum.WPF.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="800">
     <Grid>
         <Grid.Resources>
             <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxesBase}"/>
@@ -41,19 +41,23 @@
                 </Grid.RowDefinitions>
 
                 <!--Date-->
-                <Grid Grid.Row="0" Margin="0 5 0 5">
+                <Grid Grid.Row="0" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Data" Grid.Column="0"/>
-                    <DatePicker Grid.Column="1" SelectedDate="{Binding ReceivedLetter.Date}"/>
+                    <DatePicker Name="Date" Grid.Column="1" SelectedDate="{Binding Date, ValidatesOnDataErrors=True}"/>
+                    <Grid Grid.Column="1" Margin="0 0 0 -42">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Date, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
 
                 </Grid>
 
                 <!--Sender-->
-                <Grid Grid.Row="1" Margin="0 5 0 5">
+                <Grid Grid.Row="1" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
@@ -62,13 +66,18 @@
                     <TextBlock Text="Nadawca" Grid.Column="0"/>
                     <ComboBox Grid.Column="1"
                               ItemsSource="{Binding CustomerList}"
+                              Name="Sender"
                               DisplayMemberPath="Name"
-                              SelectedItem="{Binding ReceivedLetter.Sender}"/>
+                              SelectedItem="{Binding Sender, ValidatesOnDataErrors=True}"/>
+                    <Grid Grid.Column="1" Margin="0 0 0 -42">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Sender, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
 
                 </Grid>
 
                 <!--Recipient-->
-                <Grid Grid.Row="2" Margin="0 5 0 5">
+                <Grid Grid.Row="2" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
@@ -76,48 +85,76 @@
 
                     <TextBlock Text="Odbiorca" Grid.Column="0"/>
                     <ComboBox Grid.Column="1"
+                              Name="Recipient"
                               ItemsSource="{Binding CustomerList}"
                               DisplayMemberPath="Name"
-                              SelectedItem="{Binding ReceivedLetter.Recipient}"/>
+                              SelectedItem="{Binding Recipient, ValidatesOnDataErrors=True}"/>
+                    <Grid Grid.Column="1" Margin="0 0 0 -42">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Recipient, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
 
                 </Grid>
 
                 <!--Content-->
-                <Grid Grid.Row="3" Margin="0 5 0 5">
+                <Grid Grid.Row="3" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Treść" Grid.Column="0"/>
-                    <TextBox TextWrapping="Wrap" Height="90" Grid.Column="1" Text="{Binding ReceivedLetter.Content, UpdateSourceTrigger=PropertyChanged}"
-                             MaxLength="400"/>
+                    <TextBox Name="Content" TextWrapping="Wrap" Height="90" Grid.Column="1" Text="{Binding Content, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate></ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
+                    <Grid Grid.Column="1" Margin="0 0 0 -107">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Content, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
 
                 </Grid>
 
                 <!--Comment-->
-                <Grid Grid.Row="4" Margin="0 5 0 5">
+                <Grid Grid.Row="4" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Komentarz" Grid.Column="0"/>
-                    <TextBox TextWrapping="Wrap" Height="60" Grid.Column="1" Text="{Binding ReceivedLetter.Comment, UpdateSourceTrigger=PropertyChanged}"
-                             MaxLength="400"/>
+                    <TextBox x:Name="Comment" TextWrapping="Wrap" Height="60" Grid.Column="1" Text="{Binding Comment, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate></ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
+                    <Grid Grid.Column="1" Margin="0 0 0 -75">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Comment, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
+                    
 
                 </Grid>
 
                 <!--Attachment-->
-                <Grid Grid.Row="5" Margin="0 5 0 5">
+                <Grid Grid.Row="5" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Załącznik" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding ReceivedLetter.Attachment, UpdateSourceTrigger=PropertyChanged}"
-                             MaxLength="400"/>
+                    <TextBox x:Name="Attachment" Grid.Column="1" Text="{Binding Attachment, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate></ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
+
+                    <Grid Grid.Column="1" Margin="0 0 0 -42">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Attachment, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
 
                 </Grid>
 

@@ -10,7 +10,7 @@
         mc:Ignorable="d"
         AllowsTransparency="True"
         WindowStyle="None"
-        Title="MainWindow" Height="550" Width="900"
+        Title="MainWindow" Height="600" Width="900"
         Background="Transparent">
 
     <i:Interaction.Behaviors>

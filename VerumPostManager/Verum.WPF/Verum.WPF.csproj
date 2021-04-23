@@ -26,9 +26,4 @@
     <ProjectReference Include="..\Verum.DataAccess\Verum.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Validators\ReceivedLetters\" />
-    <Folder Include="Validators\SentLetters\" />
-  </ItemGroup>
-
 </Project>

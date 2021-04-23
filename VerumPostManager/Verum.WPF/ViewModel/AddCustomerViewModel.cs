@@ -10,7 +10,8 @@ using Verum.DataAccess.CQRS.Commands.Customers;
 using Verum.DataAccess.Entities;
 using Verum.WPF.State.LocalServices.PanelsVisibilityService;
 using Verum.WPF.State.Navigators;
-using Verum.WPF.Validators.Customers;
+using Verum.WPF.State.Validators.Customers;
+
 
 namespace Verum.WPF.ViewModel
 {
@@ -61,7 +62,63 @@ namespace Verum.WPF.ViewModel
                 OnPropertyChanged(nameof(Street));
 
             }
-        }        
+        }
+
+        public string Town
+        {
+            get
+            {
+                return Customer.Town;
+            }
+            set
+            {
+                Customer.Town = value;
+                OnPropertyChanged(nameof(Town));
+
+            }
+        }
+
+        public string Country
+        {
+            get
+            {
+                return Customer.Country;
+            }
+            set
+            {
+                Customer.Country = value;
+                OnPropertyChanged(nameof(Country));
+
+            }
+        }
+
+        public string PostCode
+        {
+            get
+            {
+                return Customer.PostCode;
+            }
+            set
+            {
+                Customer.PostCode = value;
+                OnPropertyChanged(nameof(PostCode));
+
+            }
+        }
+
+        public string Comments
+        {
+            get
+            {
+                return Customer.Comments;
+            }
+            set
+            {
+                Customer.Comments = value;
+                OnPropertyChanged(nameof(Comments));
+
+            }
+        }
 
         private ICommand addRow;
         public ICommand AddRow

@@ -5,14 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Verum.WPF.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">      
-    
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+
+
     <Grid>
         <Grid.Resources>
             <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxesBase}"/>
             <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockBase}"/>
-        </Grid.Resources>     
-       
+        </Grid.Resources>
+
         <Border Background="White"/>
 
         <!--MainGrid-->
@@ -41,86 +44,126 @@
                 </Grid.RowDefinitions>
 
                 <!--Name-->
-                <Grid Grid.Row="0" Margin="0 5 0 5">
+                <Grid Grid.Row="0" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Nazwa" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Name="Name" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
-                             MaxLength="100"/>
-                    <TextBlock Text="{Binding ElementName=Name, Path=(Validation.Errors)[0].ErrorContent}" />
+                    <TextBox Grid.Column="1" Name="Name" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate></ControlTemplate>
+                        </Validation.ErrorTemplate>
+
+                    </TextBox>
+                    <Grid Grid.Column="1" Margin="0 0 0 -42">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Name, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
 
                 </Grid>
 
                 <!--Street-->
-                <Grid Grid.Row="1" Margin="0 5 0 5">
+                <Grid Grid.Row="1" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Ulica" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Name="Street" Text="{Binding Street, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
-                             MaxLength="50"/>
-                    <TextBlock Text="{Binding ElementName=Street, Path=(Validation.Errors)[0].ErrorContent}" />
+                    <TextBox Grid.Column="1" Name="Street" Text="{Binding Street, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate></ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
+                    <Grid Grid.Column="1" Margin="0 0 0 -42">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Street, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
 
                 </Grid>
 
                 <!--Town-->
-                <Grid Grid.Row="2" Margin="0 5 0 5">
+                <Grid Grid.Row="2" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Miasto" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Town, UpdateSourceTrigger=PropertyChanged}"
-                             MaxLength="50"/>
+                    <TextBox Grid.Column="1" Name="Town" Text="{Binding Town, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate></ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
+                    <Grid Grid.Column="1" Margin="0 0 0 -42">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Town, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
 
                 </Grid>
 
                 <!--Country-->
-                <Grid Grid.Row="3" Margin="0 5 0 5">
+                <Grid Grid.Row="3" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Kraj" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Country, UpdateSourceTrigger=PropertyChanged}"
-                             MaxLength="50"/>
+                    <TextBox Grid.Column="1" Name="Country" Text="{Binding Country, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate></ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
+                    <Grid Grid.Column="1" Margin="0 0 0 -42">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Country, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
 
                 </Grid>
 
                 <!--PostCode-->
-                <Grid Grid.Row="4" Margin="0 5 0 5">
+                <Grid Grid.Row="4" Margin="0 0 0 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Kod Pocztowy" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.PostCode, UpdateSourceTrigger=PropertyChanged}"
-                             MaxLength="10"/>
-
+                    <TextBox Grid.Column="1" Name="PostCode" Text="{Binding PostCode, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate></ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
+                    <Grid Grid.Column="1" Margin="0 0 0 -42">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=PostCode, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
                 </Grid>
 
                 <!--Comments-->
-                <Grid Grid.Row="5" Margin="0 5 0 5">
+                <Grid Grid.Row="5" Margin="0 0 0 30">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition SharedSizeGroup="Label" Width="auto"/>
                         <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Komentarz" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Text="{Binding Customer.Comments, UpdateSourceTrigger=PropertyChanged}"
-                             MaxLength="150"/>
+                    <TextBox Grid.Column="1" Name="Comments" Text="{Binding Comments, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+                        <Validation.ErrorTemplate>
+                            <ControlTemplate></ControlTemplate>
+                        </Validation.ErrorTemplate>
+                    </TextBox>
+                    <Grid Grid.Column="1" Margin="0 0 0 -42">
+                        <TextBlock Style="{StaticResource TextBlockError}"
+                               Text="{Binding ElementName=Comments, Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Grid>
 
                 </Grid>
 
-                <Grid Grid.Row="6" Margin="0 5 0 5">
+                <Grid Grid.Row="6" Margin="0 0 0 5">
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Content="Dodaj" Margin="0 0 20 0" Width="100" Height="30"
