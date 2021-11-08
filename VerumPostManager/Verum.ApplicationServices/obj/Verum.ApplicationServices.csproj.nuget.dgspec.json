@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj": {}
+    "C:\\Users\\wojte\\OneDrive\\Pulpit\\Github Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj": {
+    "C:\\Users\\wojte\\OneDrive\\Pulpit\\Github Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
+        "projectUniqueName": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Github Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
         "projectName": "Verum.ApplicationServices",
-        "projectPath": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
+        "projectPath": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Github Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
         "packagesPath": "C:\\Users\\wojte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\obj\\",
+        "outputPath": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Github Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wojte\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

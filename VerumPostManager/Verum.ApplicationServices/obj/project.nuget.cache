@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mQkGokiAxvCs2yPtEPm0dOK+qp2hU2mjQ7VCRFRrl3mLHZ6+18EDscuZqNSkPBv+Pbi34ekKcYqF6ExD2Wjgig==",
+  "dgSpecHash": "PtzYiy60skwFOBOZYBC8HRNOib/r9prW0Ef7GL3b97QFSNvZgTOdgt8F2sEOrOHJ9JZbuQ/Hbbdsm04znqPMkg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
+  "projectFilePath": "C:\\Users\\wojte\\OneDrive\\Pulpit\\Github Desktop\\Verum\\VerumPostManager\\Verum.ApplicationServices\\Verum.ApplicationServices.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wojte\\.nuget\\packages\\fluentvalidation\\10.0.3\\fluentvalidation.10.0.3.nupkg.sha512"
   ],
